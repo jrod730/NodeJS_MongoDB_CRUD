@@ -1,0 +1,31 @@
+<% include partials/header %>
+	<h1>Edit Customer </h1>
+	<% if(errors != undefined){ %>
+	<ul>
+		<% for (var i = 0; i < errors.length; i++){ %>
+			<li><%= errors[i].msg %> </li>
+		<% } %>
+	</ul>
+	<% }%>
+	<form method="post" action="/users/editUser/<%= user._id %>">
+		<label>First Name</label>
+		<input type="text" name="firstName">
+		<br>
+		<label>Last Name</label>
+		<input type="text" name="lastName">
+		<br>
+		<label>Email</label>
+		<input type="text" name="email">
+		<br>
+		<input type="submit" value="submit">
+	</form>
+
+	<h1><%= title %></h1>
+	<ul>
+		
+			<li>First Name: <%= user.firstName %> </li>
+			<li>Last Name: <%= user.lastName %> </li>
+			<li>Email: <%= user.email %></li>
+	</ul>
+
+<% include partials/footer %>
